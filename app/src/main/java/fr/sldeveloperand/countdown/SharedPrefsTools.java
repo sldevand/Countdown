@@ -6,7 +6,7 @@ import android.preference.PreferenceManager;
 
 import java.util.Date;
 
-public class Tools {
+public class SharedPrefsTools {
 
     static SharedPreferences prefs;
 

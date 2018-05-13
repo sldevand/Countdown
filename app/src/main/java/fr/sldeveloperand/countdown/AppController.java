@@ -16,14 +16,14 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import static fr.sldeveloperand.countdown.Tools.getDeadlineFromPrefs;
-import static fr.sldeveloperand.countdown.Tools.getEventNameFromPrefs;
-import static fr.sldeveloperand.countdown.Tools.prefs;
+import static fr.sldeveloperand.countdown.SharedPrefsTools.getDeadlineFromPrefs;
+import static fr.sldeveloperand.countdown.SharedPrefsTools.getEventNameFromPrefs;
+import static fr.sldeveloperand.countdown.SharedPrefsTools.prefs;
 
 public class AppController extends AppCompatActivity {
 
-    private static final int UN = 1;
-    private static final int DOUZE=12;
+    private static final int ONE = 1;
+    private static final int TWELVE=12;
 
     TextView tvDeadline,tvCountdown,tvEventName;
     SimpleDateFormat df;
@@ -32,7 +32,7 @@ public class AppController extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_controller);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        Tools.init(this);
+        SharedPrefsTools.init(this);
         setSupportActionBar(toolbar);
         df=new SimpleDateFormat(getResources().getString(R.string.frenchDateFormat), Locale.FRANCE);
 
@@ -81,9 +81,9 @@ public class AppController extends AppCompatActivity {
         Calendar calStr2 = Calendar.getInstance();
         Calendar calStr0;
 
-        int nbMois;
-        int nbAnnees;
-        long nbJours;
+        int nbMonths;
+        int nbYears;
+        long nbDays;
 
         if (date1.equals(date2)) {
             return null;
@@ -92,23 +92,23 @@ public class AppController extends AppCompatActivity {
         calStr1.setTime(date1);
         calStr2.setTime(date2);
 
-        nbMois = 0;
+        nbMonths = 0;
         while (calStr1.before(calStr2)) {
-            calStr1.add(GregorianCalendar.MONTH, UN);
+            calStr1.add(GregorianCalendar.MONTH, ONE);
             if (calStr1.before(calStr2) || calStr1.equals(calStr2)) {
-                nbMois++;
+                nbMonths++;
             }
         }
-        nbAnnees = (nbMois / DOUZE);
-        nbMois = (nbMois - (nbAnnees * DOUZE));
+        nbYears = (nbMonths / TWELVE);
+        nbMonths = (nbMonths - (nbYears * TWELVE));
 
         calStr0 = Calendar.getInstance();
         calStr0.setTime(date1);
-        calStr0.add(GregorianCalendar.YEAR, nbAnnees);
-        calStr0.add(GregorianCalendar.MONTH, nbMois);
-        nbJours = (calStr2.getTimeInMillis() - calStr0.getTimeInMillis()) / 86400000;
+        calStr0.add(GregorianCalendar.YEAR, nbYears);
+        calStr0.add(GregorianCalendar.MONTH, nbMonths);
+        nbDays = (calStr2.getTimeInMillis() - calStr0.getTimeInMillis()) / 86400000;
 
-        return new MyDate(nbMois,nbJours);
+        return new MyDate(nbMonths,nbDays);
     }
 
     @Override

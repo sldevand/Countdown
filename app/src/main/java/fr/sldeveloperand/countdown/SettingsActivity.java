@@ -15,7 +15,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import static fr.sldeveloperand.countdown.Tools.setDeadlineToPrefs;
+import static fr.sldeveloperand.countdown.SharedPrefsTools.setDeadlineToPrefs;
 
 
 public class SettingsActivity extends AppCompatActivity {
@@ -63,10 +63,8 @@ public class SettingsActivity extends AppCompatActivity {
                     int month = c.get(Calendar.MONTH);
                     int day = c.get(Calendar.DAY_OF_MONTH);
 
+                    new DatePickerDialog(getContext(),PrefsFragment.this, year, month, day).show();
 
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        new DatePickerDialog(getContext(),PrefsFragment.this, year, month, day).show();
-                    }
                     return false;
                 }
             });
