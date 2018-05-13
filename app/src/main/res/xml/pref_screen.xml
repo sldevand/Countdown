@@ -1,0 +1,17 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <EditTextPreference
+        android:key="@string/event_name_key"
+        android:summary="@string/event_name_summary"
+        android:title="@string/event_name_title"
+        android:dialogTitle="@string/event_name_title"
+        />
+
+    <Preference
+        android:key="@string/date_filter_key"
+        android:summary="@string/reschedule_summary"
+        android:title="@string/reschedule_title"
+        android:dialogTitle="@string/reschedule_title" />
+
+</PreferenceScreen>

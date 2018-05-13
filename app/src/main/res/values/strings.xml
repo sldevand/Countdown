@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Countdown</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="event_name">Event Name</string>
+    <string name="countdown_example">02 Months 24 Days</string>
+    <string name="frenchDateFormat">dd/MM/yyyy</string>
+
+    <string name="key_shared_prefs">fr.sldeveloperand.countdown.sharedprefs</string>
+
+    <string name="date_filter_key">btnDateFilter</string>
+    <string name="reschedule_title">Date</string>
+    <string name="reschedule_summary">Event Date</string>
+
+    <string name="event_name_key">event_name_key</string>
+    <string name="event_name_title">Name</string>
+    <string name="event_name_summary">Event Name</string>
+
+
+</resources>

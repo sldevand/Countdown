@@ -1,0 +1,9 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="countdown_margin_top">40dp</dimen>
+    <dimen name="event_name_size">30sp</dimen>
+    <dimen name="event_name_margin_bottom">20dp</dimen>
+    <dimen name="deadline_text_size">20sp</dimen>
+    <dimen name="countdown_text_size">30sp</dimen>
+
+</resources>

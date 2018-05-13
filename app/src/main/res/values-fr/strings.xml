@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Il Reste…</string>
+    <string name="action_settings">Réglages</string>
+    <string name="title_activity_settings">Réglages</string>
+
+    <string name="event_name">Nom de l\'évènement</string>
+    <string name="countdown_example">02 Mois 24 Jours</string>
+
+    <string name="reschedule_title">Date</string>
+    <string name="reschedule_summary">Date de l\'évènement</string>
+
+    <string name="event_name_title">Nom</string>
+    <string name="event_name_summary">Nom de l\'évènement</string>
+    <string name="frenchDateFormat">dd/MM/yyyy</string>
+    <string name="key_shared_prefs">fr.sldeveloperand.countdown.sharedprefs</string>
+    <string name="date_filter_key">btnDateFilter</string>
+    <string name="event_name_key">event_name_key</string>
+
+</resources>
