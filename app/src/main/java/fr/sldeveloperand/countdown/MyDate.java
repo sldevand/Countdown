@@ -4,43 +4,20 @@ public class MyDate {
     private long days;
     private int months;
     private int years;
-    private long hours;
 
-    public MyDate(int months,long days) {
+    MyDate(int months,long days) {
         this.months = months;
         this.days = days;
+        this.years=0;
     }
 
     public long getDays() {
         return days;
     }
 
-    public void setDays(long days) {
-        this.days = days;
-    }
 
     public int getMonths() {
         return months;
-    }
-
-    public void setMonths(int months) {
-        this.months = months;
-    }
-
-    public int getYears() {
-        return years;
-    }
-
-    public void setYears(int years) {
-        this.years = years;
-    }
-
-    public long getHours() {
-        return hours;
-    }
-
-    public void setHours(long hours) {
-        this.hours = hours;
     }
 
     @Override
@@ -50,9 +27,7 @@ public class MyDate {
 
         MyDate myDate = (MyDate) o;
 
-        if (days != myDate.days) return false;
-        if (months != myDate.months) return false;
-        return years == myDate.years;
+        return days == myDate.days && months == myDate.months && years == myDate.years;
     }
 
     @Override
@@ -69,7 +44,6 @@ public class MyDate {
                 "days=" + days +
                 ", months=" + months +
                 ", years=" + years +
-                ", hours=" + hours +
                 '}';
     }
 }

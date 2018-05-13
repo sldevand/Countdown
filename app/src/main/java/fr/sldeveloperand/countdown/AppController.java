@@ -3,8 +3,6 @@ package fr.sldeveloperand.countdown;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -18,7 +16,9 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import static fr.sldeveloperand.countdown.Tools.*;
+import static fr.sldeveloperand.countdown.Tools.getDeadlineFromPrefs;
+import static fr.sldeveloperand.countdown.Tools.getEventNameFromPrefs;
+import static fr.sldeveloperand.countdown.Tools.prefs;
 
 public class AppController extends AppCompatActivity {
 
@@ -41,7 +41,6 @@ public class AppController extends AppCompatActivity {
         tvEventName = findViewById(R.id.tvEventName);
         refreshDisplay();
 
-
         SharedPreferences.OnSharedPreferenceChangeListener listener =
             new SharedPreferences.OnSharedPreferenceChangeListener() {
                 public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
@@ -58,7 +57,7 @@ public class AppController extends AppCompatActivity {
         Date deadline = getDeadlineFromPrefs(this);
 
         Date now = new Date();
-        MyDate diff = calculerDiffDates(now,deadline);
+        MyDate diff = calculateDiffDates(now,deadline);
 
         StringBuilder builder = new StringBuilder();
 
@@ -77,14 +76,14 @@ public class AppController extends AppCompatActivity {
 
     }
 
-    public MyDate calculerDiffDates(Date date1, Date date2){
+    public MyDate calculateDiffDates(Date date1, Date date2){
         Calendar calStr1 = Calendar.getInstance();
         Calendar calStr2 = Calendar.getInstance();
-        Calendar calStr0 = Calendar.getInstance();
+        Calendar calStr0;
 
-        int nbMois = 0;
-        int nbAnnees = 0;
-        long nbJours = 0;
+        int nbMois;
+        int nbAnnees;
+        long nbJours;
 
         if (date1.equals(date2)) {
             return null;

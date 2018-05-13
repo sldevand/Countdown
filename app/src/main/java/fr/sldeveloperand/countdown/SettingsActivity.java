@@ -1,7 +1,6 @@
 package fr.sldeveloperand.countdown;
 
 import android.app.DatePickerDialog;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -14,9 +13,9 @@ import android.widget.DatePicker;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.prefs.Preferences;
+import java.util.GregorianCalendar;
 
-import static fr.sldeveloperand.countdown.Tools.*;
+import static fr.sldeveloperand.countdown.Tools.setDeadlineToPrefs;
 
 
 public class SettingsActivity extends AppCompatActivity {
@@ -52,7 +51,7 @@ public class SettingsActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_screen);
 
-            Preference btnDateFilter = (Preference) findPreference(getResources().getString(R.string.date_filter_key));
+            Preference btnDateFilter = findPreference(getResources().getString(R.string.date_filter_key));
 
             btnDateFilter.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
 
@@ -76,7 +75,8 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker datePicker, int year, int month, int day) {
 
-            Date date = new Date(year-1900,month,day);
+            GregorianCalendar cal = new GregorianCalendar(year,month,day);
+            Date date = cal.getTime();
             long time = date.getTime();
 
             setDeadlineToPrefs(getActivity(),time);
