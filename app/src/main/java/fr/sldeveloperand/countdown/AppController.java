@@ -2,6 +2,8 @@ package fr.sldeveloperand.countdown;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -16,14 +18,18 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import static fr.sldeveloperand.countdown.SharedPrefsTools.getDeadlineFromPrefs;
-import static fr.sldeveloperand.countdown.SharedPrefsTools.getEventNameFromPrefs;
-import static fr.sldeveloperand.countdown.SharedPrefsTools.prefs;
+import fr.sldeveloperand.countdown.Utils.ColorUtils;
+import fr.sldeveloperand.countdown.Utils.SharedPrefsUtils;
+
+import static fr.sldeveloperand.countdown.Utils.SharedPrefsUtils.getDeadlineFromPrefs;
+import static fr.sldeveloperand.countdown.Utils.SharedPrefsUtils.getEventNameFromPrefs;
+import static fr.sldeveloperand.countdown.Utils.SharedPrefsUtils.prefs;
 
 public class AppController extends AppCompatActivity {
 
     private static final int ONE = 1;
     private static final int TWELVE=12;
+    private Toolbar toolbar;
 
     TextView tvDeadline,tvCountdown,tvEventName;
     SimpleDateFormat df;
@@ -31,25 +37,25 @@ public class AppController extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_controller);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        SharedPrefsTools.init(this);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        df=new SimpleDateFormat(getResources().getString(R.string.frenchDateFormat), Locale.FRANCE);
 
         tvDeadline = findViewById(R.id.tvDeadline);
         tvCountdown = findViewById(R.id.tvCountDown);
         tvEventName = findViewById(R.id.tvEventName);
-        refreshDisplay();
 
+        SharedPrefsUtils.init(this);
         SharedPreferences.OnSharedPreferenceChangeListener listener =
-            new SharedPreferences.OnSharedPreferenceChangeListener() {
-                public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-                    Log.e("sharedPrefsChanged",key);
-                    refreshDisplay();
-                }
-            };
+                new SharedPreferences.OnSharedPreferenceChangeListener() {
+                    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+                        Log.e("sharedPrefsChanged", key);
+                        refreshDisplay();
+                    }
+                };
         prefs.registerOnSharedPreferenceChangeListener(listener);
+        df = new SimpleDateFormat(getResources().getString(R.string.frenchDateFormat), Locale.FRANCE);
 
+        refreshDisplay();
     }
 
     public void refreshDisplay(){
@@ -74,6 +80,9 @@ public class AppController extends AppCompatActivity {
         tvDeadline.setText(df.format(deadline));
         tvCountdown.setText(builder.toString());
 
+        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.pink_bokeh_circles);
+        Bitmap resizedBmp = Bitmap.createBitmap(bmp, 0, 0, bmp.getWidth() / 2, bmp.getHeight());
+        ColorUtils.setToolbarColorWithBitmap(this, toolbar, resizedBmp);
     }
 
     public MyDate calculateDiffDates(Date date1, Date date2){
@@ -130,6 +139,4 @@ public class AppController extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }

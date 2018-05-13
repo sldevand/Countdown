@@ -1,7 +1,6 @@
 package fr.sldeveloperand.countdown;
 
 import android.app.DatePickerDialog;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -15,7 +14,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import static fr.sldeveloperand.countdown.SharedPrefsTools.setDeadlineToPrefs;
+import static fr.sldeveloperand.countdown.Utils.SharedPrefsUtils.setDeadlineToPrefs;
 
 
 public class SettingsActivity extends AppCompatActivity {
