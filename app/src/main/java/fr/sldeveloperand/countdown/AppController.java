@@ -81,8 +81,8 @@ public class AppController extends AppCompatActivity {
         tvCountdown.setText(builder.toString());
 
         Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.pink_bokeh_circles);
-        Bitmap resizedBmp = Bitmap.createBitmap(bmp, 0, 0, bmp.getWidth() / 2, bmp.getHeight());
-        ColorUtils.setToolbarColorWithBitmap(this, toolbar, resizedBmp);
+
+        ColorUtils.setToolbarColorWithBitmap(this, toolbar, bmp);
     }
 
     public MyDate calculateDiffDates(Date date1, Date date2){
