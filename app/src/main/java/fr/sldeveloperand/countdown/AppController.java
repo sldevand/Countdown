@@ -82,6 +82,7 @@ public class AppController extends AppCompatActivity {
 
         Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.pink_bokeh_circles);
 
+
         ColorUtils.setToolbarColorWithBitmap(this, toolbar, bmp);
     }
 
