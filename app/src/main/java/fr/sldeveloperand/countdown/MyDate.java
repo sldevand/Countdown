@@ -5,7 +5,7 @@ public class MyDate {
     private int months;
     private int years;
 
-    MyDate(int months,long days) {
+    public MyDate(int months, long days) {
         this.months = months;
         this.days = days;
         this.years=0;

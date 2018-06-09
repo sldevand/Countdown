@@ -15,5 +15,7 @@
     <string name="key_shared_prefs">fr.sldeveloperand.countdown.sharedprefs</string>
     <string name="date_filter_key">btnDateFilter</string>
     <string name="event_name_key">event_name_key</string>
+    <string name="month">mois</string>
+    <string name="day">jour</string>
 
 </resources>

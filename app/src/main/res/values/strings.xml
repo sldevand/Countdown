@@ -16,6 +16,8 @@
     <string name="event_name_key">event_name_key</string>
     <string name="event_name_title">Name</string>
     <string name="event_name_summary">Event Name</string>
+    <string name="month">month</string>
+    <string name="day">day</string>
 
 
 </resources>
