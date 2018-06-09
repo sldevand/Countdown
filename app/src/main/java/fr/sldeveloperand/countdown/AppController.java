@@ -82,6 +82,11 @@ public class AppController extends AppCompatActivity {
 
         Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.pink_bokeh_circles);
 
+<<<<<<< HEAD
+=======
+        //TODO fait planter à cause d'un overflow de la mémoire
+        //  Bitmap resizedBmp = Bitmap.createBitmap(bmp, 0, 0, bmp.getWidth() / 2, bmp.getHeight());
+>>>>>>> 9e36dbb8ee24c9a8bd99220ded4f9dd8339079c5
         ColorUtils.setToolbarColorWithBitmap(this, toolbar, bmp);
     }
 
