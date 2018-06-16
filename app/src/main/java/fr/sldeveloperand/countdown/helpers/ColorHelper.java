@@ -1,4 +1,4 @@
-package fr.sldeveloperand.countdown.Utils;
+package fr.sldeveloperand.countdown.helpers;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 
 import fr.sldeveloperand.countdown.R;
 
-public class ColorUtils {
+public class ColorHelper {
 
     private static void darkenStatusBar(AppCompatActivity activity, int color) {
         activity.getWindow().setStatusBarColor(darkenColor(color));

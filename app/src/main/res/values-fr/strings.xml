@@ -4,7 +4,7 @@
     <string name="title_activity_settings">Réglages</string>
 
     <string name="event_name">Nom de l\'évènement</string>
-    <string name="countdown_example">02 Mois 24 Jours</string>
+    <string name="countdown_example">XX Mois XX Jours</string>
 
     <string name="reschedule_title">Date</string>
     <string name="reschedule_summary">Date de l\'évènement</string>
@@ -17,5 +17,7 @@
     <string name="event_name_key">event_name_key</string>
     <string name="month">mois</string>
     <string name="day">jour</string>
+    <string name="shortMonth">M</string>
+    <string name="shortDay">J</string>
 
 </resources>

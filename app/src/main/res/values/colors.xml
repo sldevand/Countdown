@@ -3,5 +3,6 @@
     <color name="colorPrimary">#f8bbd0</color>
     <color name="colorPrimaryDark">#c48b9f</color>
     <color name="colorAccent">#ec407a</color>
+    <color name="smokeWhite">#F0F0F0</color>
 
 </resources>

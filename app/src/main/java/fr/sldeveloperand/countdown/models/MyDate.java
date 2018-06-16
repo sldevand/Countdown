@@ -1,4 +1,4 @@
-package fr.sldeveloperand.countdown;
+package fr.sldeveloperand.countdown.models;
 
 public class MyDate {
     private long days;

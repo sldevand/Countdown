@@ -1,4 +1,4 @@
-package fr.sldeveloperand.countdown.Utils;
+package fr.sldeveloperand.countdown.helpers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,7 +8,7 @@ import java.util.Date;
 
 import fr.sldeveloperand.countdown.R;
 
-public class SharedPrefsUtils {
+public class SharedPrefsHelper {
 
     public static SharedPreferences prefs;
 

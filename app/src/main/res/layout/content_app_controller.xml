@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".AppController"
+    tools:context=".activities.AppController"
     tools:showIn="@layout/activity_app_controller"
     android:gravity="center_horizontal"
     android:background="@drawable/pink_bokeh_circles"
