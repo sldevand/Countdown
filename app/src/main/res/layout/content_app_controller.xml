@@ -57,6 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvDeadline"
         android:layout_marginTop="@dimen/countdown_margin_top"
+        android:layout_margin="@dimen/dimen8dp"
         >
 
         <android.support.v7.widget.AppCompatTextView

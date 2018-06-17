@@ -25,8 +25,12 @@ public class ColorHelper {
         return Color.HSVToColor(hsv);
     }
 
-    public static void setToolbarColorWithBitmap(final AppCompatActivity activity, final Toolbar toolbar, final Bitmap bitmap) {
+    public static void setToolbarColorWithBitmap(final AppCompatActivity activity, final Toolbar toolbar,Bitmap bitmap) {
+
+
         Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
+
+
             public void onGenerated(@NonNull Palette p) {
                 Palette.Swatch vibrantSwatch = p.getLightVibrantSwatch();
 
@@ -43,6 +47,7 @@ public class ColorHelper {
 
                 toolbar.setBackgroundColor(backgroundColor);
                 toolbar.setTitleTextColor(textColor);
+
             }
         });
     }

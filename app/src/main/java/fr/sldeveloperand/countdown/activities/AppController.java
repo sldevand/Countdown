@@ -71,9 +71,9 @@ public class AppController extends AppCompatActivity implements Observer {
         myEvent.addObserver(this);
         myEvents.addEvent(myEvent);
 
-
         Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.pink_bokeh_circles);
         ColorHelper.setToolbarColorWithBitmap(this, toolbar, bmp);
+
         updateEvent();
 
     }

@@ -5,6 +5,7 @@ import android.content.Context;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.Optional;
 
 import fr.sldeveloperand.countdown.R;
@@ -55,13 +56,16 @@ public class DateHelper {
 
         Date now = new Date();
         Optional<MyDate> diffOpt = Optional.ofNullable(DateHelper.calculateDiffDates(now,eventDeadline));
-
+        String deviceLocale=Locale.getDefault().getLanguage();
         StringBuilder builder = new StringBuilder();
 
         if(diffOpt.isPresent()) {
             MyDate diff = diffOpt.get();
             if ( diff.getMonths() > 0) {
                 builder.append(diff.getMonths()).append(" ").append(ctx.getString(R.string.month));
+                if ((diff.getMonths() > 1) && deviceLocale.equals(Locale.ENGLISH.getLanguage())) {
+                    builder.append("s");
+                }
             }
 
             if (diff.getDays() > 0) {
