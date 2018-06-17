@@ -1,9 +1,7 @@
 package fr.sldeveloperand.countdown.activities;
 
 import android.appwidget.AppWidgetManager;
-import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
-import android.content.ContentProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,7 +13,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RemoteViews;
-import android.widget.RemoteViewsService;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -29,7 +26,6 @@ import fr.sldeveloperand.countdown.helpers.SharedPrefsHelper;
 import fr.sldeveloperand.countdown.models.MyEvent;
 import fr.sldeveloperand.countdown.models.MyEvents;
 
-import static fr.sldeveloperand.countdown.helpers.DateHelper.shortStrFromDeadline;
 import static fr.sldeveloperand.countdown.helpers.DateHelper.strFromDeadline;
 import static fr.sldeveloperand.countdown.helpers.SharedPrefsHelper.getDeadlineFromPrefs;
 import static fr.sldeveloperand.countdown.helpers.SharedPrefsHelper.getEventNameFromPrefs;
@@ -120,7 +116,7 @@ public class AppController extends AppCompatActivity implements Observer {
     }
 
     private void updateWidgets(){
-        String dateStr = shortStrFromDeadline(this,myEvent.getDeadline());
+        String dateStr = strFromDeadline(this,myEvent.getDeadline());
 
         Context context = this;
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);

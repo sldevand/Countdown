@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#c48b9f</color>
     <color name="colorAccent">#ec407a</color>
     <color name="smokeWhite">#F0F0F0</color>
+    <color name="widgetLightColor">#cc333333</color>
+    <color name="widgetDarkColor">#cc000000</color>
 
 </resources>

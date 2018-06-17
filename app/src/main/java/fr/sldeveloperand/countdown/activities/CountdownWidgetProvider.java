@@ -10,10 +10,8 @@ import android.widget.RemoteViews;
 import fr.sldeveloperand.countdown.R;
 import fr.sldeveloperand.countdown.models.MyEvent;
 
-import static fr.sldeveloperand.countdown.helpers.DateHelper.shortStrFromDeadline;
-import static fr.sldeveloperand.countdown.helpers.SharedPrefsHelper.getDeadlineFromPrefs;
-import static fr.sldeveloperand.countdown.helpers.SharedPrefsHelper.getEventNameFromPrefs;
-import static fr.sldeveloperand.countdown.helpers.SharedPrefsHelper.init;
+import static fr.sldeveloperand.countdown.helpers.DateHelper.*;
+import static fr.sldeveloperand.countdown.helpers.SharedPrefsHelper.*;
 
 public class CountdownWidgetProvider extends AppWidgetProvider {
 
@@ -25,17 +23,16 @@ public class CountdownWidgetProvider extends AppWidgetProvider {
         myEvent = new MyEvent();
         myEvent.setName(getEventNameFromPrefs(context));
         myEvent.setDeadline(getDeadlineFromPrefs(context));
-        deadlineStr = shortStrFromDeadline(context, myEvent.getDeadline());
+        deadlineStr = strFromDeadline(context, myEvent.getDeadline());
         updateEvent(context,appWidgetManager,appWidgetIds);
 
 
     }
 
     private void updateEvent(Context context , AppWidgetManager appWidgetManager,int[] appWidgetIds) {
-        final int N = appWidgetIds.length;
+
         // Perform this loop procedure for each App Widget that belongs to this provider
-        for (int i=0; i<N; i++) {
-            int appWidgetId = appWidgetIds[i];
+        for (int appWidgetId : appWidgetIds) {
             Intent intent = new Intent(context, AppController.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 

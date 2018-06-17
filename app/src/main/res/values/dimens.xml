@@ -7,5 +7,10 @@
     <dimen name="countdown_text_size">30sp</dimen>
     <dimen name="appwidget_min_height">56dp</dimen>
     <dimen name="appwidget_min_width">56dp</dimen>
+    <dimen name="widgetMargin">4dp</dimen>
+    <dimen name="widgetPadding">4dp</dimen>
+    <dimen name="textSize8">8sp</dimen>
+    <dimen name="textSize10">10sp</dimen>
+    <dimen name="textSize12">12sp</dimen>
 
 </resources>

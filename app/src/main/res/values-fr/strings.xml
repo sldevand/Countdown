@@ -19,5 +19,6 @@
     <string name="day">jour</string>
     <string name="shortMonth">M</string>
     <string name="shortDay">J</string>
+    <string name="calendar">calendar</string>
 
 </resources>

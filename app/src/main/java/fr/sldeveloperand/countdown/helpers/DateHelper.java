@@ -65,7 +65,7 @@ public class DateHelper {
             }
 
             if (diff.getDays() > 0) {
-                builder.append(" ").append(diff.getDays()).append(" ").append(ctx.getString(R.string.day));
+                builder.append("\n").append(diff.getDays()).append(" ").append(ctx.getString(R.string.day));
                 if (diff.getDays() > 1) builder.append("s");
             }
         }
@@ -73,24 +73,4 @@ public class DateHelper {
         return builder.toString();
     }
 
-    public static String shortStrFromDeadline(Context ctx, Date eventDeadline){
-
-        Date now = new Date();
-        Optional<MyDate> diffOpt = Optional.ofNullable(DateHelper.calculateDiffDates(now,eventDeadline));
-
-        StringBuilder builder = new StringBuilder();
-
-        if(diffOpt.isPresent()) {
-            MyDate diff = diffOpt.get();
-            if ( diff.getMonths() > 0) {
-                builder.append(diff.getMonths()).append(" ").append(ctx.getString(R.string.shortMonth));
-            }
-
-            if (diff.getDays() > 0) {
-                builder.append(" ").append(diff.getDays()).append(" ").append(ctx.getString(R.string.shortDay));
-            }
-        }
-
-        return builder.toString();
-    }
 }

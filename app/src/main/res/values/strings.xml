@@ -21,6 +21,8 @@
     <string name="appwidget_text">Example</string>
     <string name="shortMonth">M</string>
     <string name="shortDay">D</string>
+    <string name="widgetTitle">title</string>
+    <string name="calendar">calendar</string>
 
 
 </resources>

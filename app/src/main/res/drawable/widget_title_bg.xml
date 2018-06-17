@@ -6,6 +6,6 @@
 
     <gradient
         android:angle="270"
-        android:endColor="@color/widgetLightColor"
-        android:startColor="@color/widgetDarkColor" />
+        android:endColor="@color/smokeWhite"
+        android:startColor="@color/smokeWhite" />
 </shape>
