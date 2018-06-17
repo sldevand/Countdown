@@ -11,8 +11,8 @@ Pick up the deadline
 Press back, and that's it!
 <br>
 
-#### Screenshots
-![Screenshot Android](https://github.com/sldevand/Countdown/blob/master/screenshots/Countdown%20Home.png)
+#### Presentation
+![Presentation Android](https://github.com/sldevand/Countdown/blob/master/resources/presentation.gif)
 
 
 ## Permissions
@@ -20,9 +20,6 @@ Press back, and that's it!
 
 ## License 
 * see [LICENSE](https://github.com/sldevand/Countdown/blob/master/LICENSE.md) file
-
-## Version 
-* Version 0.1
 
 # Countdown
 Countdown Android App
@@ -33,7 +30,6 @@ Countdown Android App
 <ul>
   <li>Custom background</li>
   <li>Multi-countdowns</li>
-  <li>Android Widget</li>
 </ul>
 
 Background source :
