@@ -20,5 +20,7 @@
     <string name="shortMonth">M</string>
     <string name="shortDay">J</string>
     <string name="calendar">calendar</string>
+    <string name="appwidget_text">Exemple</string>
+    <string name="widgetTitle">titre</string>
 
 </resources>

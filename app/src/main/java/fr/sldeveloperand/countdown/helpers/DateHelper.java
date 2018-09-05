@@ -66,10 +66,11 @@ public class DateHelper {
                 if ((diff.getMonths() > 1) && deviceLocale.equals(Locale.ENGLISH.getLanguage())) {
                     builder.append("s");
                 }
+                builder.append("\n");
             }
 
             if (diff.getDays() > 0) {
-                builder.append("\n").append(diff.getDays()).append(" ").append(ctx.getString(R.string.day));
+                builder.append(diff.getDays()).append(" ").append(ctx.getString(R.string.day));
                 if (diff.getDays() > 1) builder.append("s");
             }
         }
